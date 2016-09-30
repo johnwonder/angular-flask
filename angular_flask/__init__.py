@@ -5,6 +5,7 @@ from flask import render_template, send_from_directory, url_for
 
 app = Flask(__name__)
 
+	# settings.py import
 app.config.from_object('angular_flask.settings')
 
 app.url_map.strict_slashes = False

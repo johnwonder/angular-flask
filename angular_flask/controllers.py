@@ -1,3 +1,5 @@
+# coding=utf-8 ##以utf-8编码储存中文字符
+#支持中文
 import os
 
 from flask import Flask, request, Response
@@ -10,13 +12,14 @@ from angular_flask import app
 from angular_flask.core import api_manager
 from angular_flask.models import *
 
+#创建api
 for model_name in app.config['API_MODELS']:
     model_class = app.config['API_MODELS'][model_name]
     api_manager.create_api(model_class, methods=['GET', 'POST'])
 
 session = api_manager.session
 
-
+#
 # routing for basic pages (pass routing onto the Angular app)
 @app.route('/')
 @app.route('/about')

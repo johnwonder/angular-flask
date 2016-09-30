@@ -21,6 +21,7 @@ class Post(db.Model):
         return '<Post %r>' % self.title
 
 # models for which we want to create API endpoints
+#创建api端点
 app.config['API_MODELS'] = {'post': Post}
 
 # models for which we want to create CRUD-style URL endpoints,

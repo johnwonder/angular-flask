@@ -3,6 +3,7 @@ import json
 import argparse
 import requests
 
+# 从core.py 导入db
 from angular_flask.core import db
 from angular_flask.models import Post
 
@@ -14,7 +15,7 @@ def create_sample_db_entry(api_endpoint, payload):
         headers={'Content-Type': 'application/json'})
     print r.text
 
-
+# 创建数据库
 def create_db():
     db.create_all()
 
